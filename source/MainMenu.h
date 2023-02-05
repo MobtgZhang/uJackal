@@ -24,6 +24,7 @@ public:
     void Draw(SDL_Renderer* rR);
     void Update();
     void updateActiveButton(int iDir);
+    
 };
 
 # endif

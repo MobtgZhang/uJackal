@@ -40,3 +40,7 @@ void Menu::updateActiveButton(int iDir){
             break;
     }
 }
+
+void Menu::setactiveMenuOption(int index){
+    this->activeMenuOption = index;
+}

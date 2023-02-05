@@ -19,7 +19,8 @@ public:
 	~Text();
 	void Draw(SDL_Renderer* rR, std::string sText, int X, int Y,int iR=255,int iG=255, int iB=255);
 	void setFont(int fontSize,std::string fileName="files/fonts/simhei.ttf");
-
+	int getTextWidth();
+	int getTextHeight();
 };
 
 #endif

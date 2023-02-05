@@ -10,7 +10,10 @@ MainMenu::MainMenu(){
     this->lMO.push_back(new MenuOption("OPTIONS",384,256));
     this->lMO.push_back(new MenuOption("ABOUT",384,288));
 
-    
+    rSelectLevel.x = 122;
+	rSelectLevel.y = 280;
+	rSelectLevel.w = 306;
+	rSelectLevel.h = 72;
 
     this->numOfMenuOptions = lMO.size();
     this->activeMenuOption = mainSTART;
@@ -33,7 +36,7 @@ void MainMenu::Draw(SDL_Renderer* rR){
     CCFG::getText()->Draw(rR, "NINTENDO OF AMERICA INC.",320,416, 255, 255, 255);
     if(selectLevel){
         SDL_SetRenderDrawBlendMode(rR,SDL_BLENDMODE_BLEND);
-        SDL_SetRenderDrawColor(rR,251,251,251,20);
+        SDL_SetRenderDrawColor(rR,251,251,251,60);
         SDL_RenderFillRect(rR, &rSelectLevel);
 		SDL_SetRenderDrawColor(rR, 255, 255, 255, 255);
         rSelectLevel.x += 1;
@@ -68,7 +71,10 @@ void MainMenu::enter(){
             }
             break;
         case mainOPTIONS:
-            //选项菜单
+            CCFG::getMM()->getOptions()->setEscapeToMainMenu(true);
+            CCFG::getMM()->resetGameState(CCFG::getMM()->eOptions);
+            CCFG::getMM()->getOptions()->updateVolumeRect();
+            CCFG::getMM()->setGameState(CCFG::getMM()->eOptions);
             break;
         case mainABOUT:
             //关于菜单

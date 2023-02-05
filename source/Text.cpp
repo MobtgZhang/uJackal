@@ -43,3 +43,11 @@ void Text::setFont(int fontSize,std::string fileName){
 	}
 }
 
+int Text::getTextWidth(){
+	
+}
+
+int Text::getTextHeight(){
+
+}
+

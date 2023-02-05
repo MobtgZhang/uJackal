@@ -44,6 +44,7 @@ Application::Application(){
     mainEvent = new SDL_Event();
     // 加载音效文件
     
+    CCFG::getMusic()->PlayMusic();
     // 加载地图文件
     
     // 显示界面，

@@ -21,6 +21,7 @@ public:
     ~MenuManager();
 
     gameState getGameState();
+    void resetGameState(gameState state);
     void setGameState(gameState state);
     void setBackgroundColor(SDL_Renderer* rR);
     void Draw(SDL_Renderer* rR);
@@ -32,6 +33,8 @@ public:
     void keyPressed(int iDir);
     void enter();
     void escape();
+
+    OptionsMenu* getOptions();
 private:
     MainMenu* oMainMenu;
     OptionsMenu* oOptionsMenu;
