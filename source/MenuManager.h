@@ -2,22 +2,21 @@
 # ifndef MENUMANAGER_H
 # define MENUMANAGER_H
 # include "MainMenu.h"
+# include "OptionsMenu.h"
 # include "Text.h"
 
-enum gameState{
+class MenuManager{
+
+public:
+
+    enum gameState{
         eMainMenu,
         eGameLoading,
         eGame,
         eAbout,
         eOptions,
         ePause
-};
-
-class MenuManager{
-private:
-    MainMenu* oMainMenu;
-    gameState currentGame;
-public:
+    };
     MenuManager();
     ~MenuManager();
 
@@ -26,6 +25,18 @@ public:
     void setBackgroundColor(SDL_Renderer* rR);
     void Draw(SDL_Renderer* rR);
     void Update();
+    
+    CImg* getActiveOption();
+    void setActiveOption(SDL_Renderer* rR);
+
+    void keyPressed(int iDir);
+    void enter();
+    void escape();
+private:
+    MainMenu* oMainMenu;
+    OptionsMenu* oOptionsMenu;
+    gameState currentGameState;
+    CImg* activeOption;
 };
 
 # endif
