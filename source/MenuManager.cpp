@@ -102,23 +102,7 @@ void MenuManager::escape() {
 	}
 }
 
-OptionsMenu* MenuManager::getOptions(){
-    return this->oOptionsMenu;
-}
-
-void MenuManager::resetGameState(gameState state){
-    switch(state){
-        case eMainMenu:
-            oMainMenu->setactiveMenuOption(0);
-            break;
-        case eOptions:
-            oOptionsMenu->setactiveMenuOption(0);
-            break;
-        case ePause:
-            //oPauseMenu->setactiveMenuOption(0);
-            break;
-        default:
-            break;
-    }
+OptionsMenu* MenuManager::getOptionsMenu(){
+    return oOptionsMenu;
 }
 

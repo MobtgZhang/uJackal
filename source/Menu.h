@@ -25,7 +25,6 @@ public:
     virtual void Update();
     virtual void Draw(SDL_Renderer* rR);
 	virtual void updateActiveButton(int iDir);
-    void setactiveMenuOption(int index);
 };
 
 # endif

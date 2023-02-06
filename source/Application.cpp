@@ -44,12 +44,12 @@ Application::Application(){
     mainEvent = new SDL_Event();
     // 加载音效文件
     
-    CCFG::getMusic()->PlayMusic();
     // 加载地图文件
     
     // 显示界面，
     CCFG::getMM()->setActiveOption(m_renderer);
     CCFG::getLogo()->setImg("jackal",m_renderer);
+    CCFG::getText()->setFont(m_renderer,"font");
 
 
     // 加载并渲染主页面
@@ -94,8 +94,10 @@ void Application::mainloop(){
         Draw();
         //更新
         Update();
-
+        
         //FPS 显示设置
+        CCFG::getText()->Draw(m_renderer, "FPS:" + std::to_string(iNumOfFPS), CCFG::GAME_WIDTH - CCFG::getText()->getTextWidth("FPS:" + std::to_string(iNumOfFPS), 8) - 8, 5, 8);
+        
         if(SDL_GetTicks()-1000>=lFPSTime){
             lFPSTime = SDL_GetTicks();
             iNumOfFPS = iFPS;

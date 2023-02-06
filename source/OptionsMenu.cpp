@@ -14,6 +14,5 @@ void OptionsMenu::setEscapeToMainMenu(bool escapeToMainMenu){
 }
 
 void OptionsMenu::updateVolumeRect(){
-
+    
 }
-
