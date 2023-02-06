@@ -47,7 +47,7 @@ void MainMenu::Draw(SDL_Renderer* rR){
 		rSelectLevel.w += 2;
 
         CCFG::getText()->Draw(rR, "SELECT LEVEL", rSelectLevel.x + rSelectLevel.w/2 - CCFG::getText()->getTextWidth("SELECT LEVEL")/2, rSelectLevel.y + 16, 16, 255, 255, 255);
-        for(int i = 0, extraX = 0; i < 8; i++) {
+        for(int i = 0, extraX = 0; i < 6; i++) {
 			if(i == activeLevelID) {
 				CCFG::getText()->Draw(rR, std::to_string(i + 1) , rSelectLevel.x + 16*(i + 1) + 16*i + extraX, rSelectLevel.y + 16 + 24, 16, 255, 255, 255);
 			} else {
@@ -95,13 +95,13 @@ void MainMenu::updateActiveButton(int iDir){
                 if(activeLevelID >0){
                     --activeLevelID;
                 }else{
-                    activeLevelID = 7;
+                    activeLevelID = 5;
                 }
             }
             break;
         case iRIGHT_ITEM:
             if(selectLevel){
-                if(activeLevelID < 7) {
+                if(activeLevelID < 5) {
 					++activeLevelID;
 				} else {
 					activeLevelID = 0;
