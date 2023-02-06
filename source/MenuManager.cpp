@@ -2,6 +2,7 @@
 MenuManager::MenuManager(){
     this->currentGameState = eMainMenu;
     this->oMainMenu = new MainMenu();
+    this->oOptionsMenu = new OptionsMenu();
     this->activeOption = NULL;
 }
 

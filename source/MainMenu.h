@@ -12,8 +12,8 @@ private:
     SDL_Rect rSelectLevel;
     enum MainMenuState{
         mainSTART,
-        mainABOUT,
-        mainOPTIONS
+        mainOPTIONS,
+        mainABOUT
     };
 public:
     MainMenu();
